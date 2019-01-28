@@ -1,0 +1,19 @@
+/*-------------------------------------  Feedback  ------------------------------------------*/
+
+.feedback {
+  padding: 110px 0 130px 0;
+  @include var(background-color, clr-base-lt);
+
+}
+
+.card--center {
+  grid-column: 3 / span 2;
+}
+
+.card--left {
+  grid-column: 2 / span 1;
+}
+
+.card--right {
+  grid-column: 5 / span 1;
+}

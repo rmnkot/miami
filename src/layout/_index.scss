@@ -1,0 +1,95 @@
+/*==================================== Layout =============================================*/
+
+html {
+  font-size: $fs-base;
+  scroll-behavior: smooth;
+
+  @include media('tablet-wide', max) {
+    font-size: $fs-base - 1;
+  }
+
+  @include media('desktop') {
+    font-size: $fs-base + 1;
+  }
+
+  @include media('desktop-xl') {
+    font-size: $fs-base + 2;
+  }
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  @include var(color, clr-ntrl-max);
+  @include var(background-color, clr-ntrl-min);
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr 2fr 1fr;
+  grid-template-rows: 100vh auto 42vw;
+  grid-column-gap: 1.25rem;
+
+  @include media('tablet-wide', max) {
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 2fr 0.5fr;
+  }
+
+  @include media('desktop-xl') {
+    grid-template-columns: 2fr 2fr 1fr 1fr 2fr 2fr;
+  }
+}
+
+.header,
+.main,
+.footer,
+.about,
+.gallery,
+.consult,
+.feedback,
+.contact {
+  grid-column: 1 / span 6;
+  display: grid;
+  grid-template-columns: inherit;
+  grid-column-gap: inherit;
+  position: relative;
+}
+
+.header,
+.footer {
+  background-size: cover;
+  background-position: center top;
+}
+
+.header {
+  grid-row: 1 / 2;
+  grid-template-rows: 200px 140px;
+  background-image: url("../img/bg-img/hero.jpg");
+  align-content: space-between;
+}
+
+.main {
+  grid-row: 2 / 3;
+  grid-template-rows: auto auto auto auto auto;
+}
+
+.about {
+  grid-row: 1;
+}
+
+.galery {
+  grid-row: 2;
+}
+
+.consult {
+  grid-row: 3;
+}
+
+.feedback {
+  grid-row: 4;
+}
+
+.contact {
+  grid-row: 5;
+}
+
+.footer {
+  grid-row: 3 / 4;
+  background-image: url("../img/bg-img/footer.jpg");
+  grid-template-rows: auto 85px;
+}

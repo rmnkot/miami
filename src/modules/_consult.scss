@@ -1,0 +1,28 @@
+/*-------------------------------------  Consult  ------------------------------------------*/
+
+.consult {
+  padding: 150px 0;
+
+  &__article {
+    grid-column: 2 / span 2;
+
+    &__head {
+      margin-bottom: 40px;
+      line-height: 1.15;
+
+    }
+
+    &__text {
+      line-height: 1.5;
+      max-width: 600px;
+    }
+  }
+
+  &__form {
+    grid-column: 4 / span 2;
+    justify-self: end;
+    width: 30.5vw;
+    max-width: 700px;
+
+  }
+}

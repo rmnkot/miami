@@ -1,0 +1,32 @@
+/*-------------------------------------  Contact  ------------------------------------------*/
+
+.contact {
+  padding: 157px 0 102px 0;
+
+  &__article {
+    grid-column: 2 / span 1;
+    font-size: $fs-h4;
+    line-height: 1.25;
+    display: flex;
+    flex-direction: column;
+
+    &__mail {
+      margin-bottom: 30px;
+    }
+
+    &__addres {
+      margin-top: 30px;
+      line-height: inherit;
+    }
+  }
+
+  &__form {
+    grid-column: 4 / span 2;
+    justify-self: end;
+    width: 30.5vw;
+
+    @include media('desktop-xl') {
+      max-width: 700px;
+    }
+  }
+}

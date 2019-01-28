@@ -1,0 +1,30 @@
+/*-------------------------------------  Form  ------------------------------------------*/
+.form {
+  display: flex;
+  flex-direction: column;
+
+  &__input,
+  &__textarea {
+    @extend .btn;
+    @include var(background-color, clr-base-lt);
+    @include var(color, clr-ntrl-max);
+    text-transform: none;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 10px;
+
+    &:hover {
+      @include var(background-color, clr-base-lt);
+    }
+
+    &::placeholder {
+      @include var(color, clr-base-dk);
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+
+  &__textarea {
+    padding-bottom: 0.8em;
+  }
+}

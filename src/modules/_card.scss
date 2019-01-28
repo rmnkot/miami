@@ -1,0 +1,58 @@
+/*-------------------------------------  Card  ------------------------------------------*/
+
+.card {
+  position: relative;
+  padding: 0 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  &__img {
+    margin-bottom: 0.8em;
+
+    @include media('tablet-wide', max) {
+      width: 100px;
+    }
+  }
+
+  &__name {
+    line-height: 1.5;
+    font-weight: 700;
+
+    &:before {
+      content: '';
+      background-image: url(../img/icons/quotes.svg);
+      background-size: 35px 35px;
+      background-repeat: no-repeat;
+      width: 35px;
+      height: 35px;
+      position: absolute;
+      top: 50px;
+      left: 50%;
+      transform: translateX(-100px);
+
+      @include media('tablet-wide', max) {
+        background-size: 25px 25px;
+        width: 25px;
+        height: 25px;
+        top: 36px;
+        transform: translateX(-71px);
+      }
+
+    }
+
+  }
+
+  &__company {
+    line-height: 1.5;
+    font-style: italic;
+    font-weight: 500;
+    opacity: 0.5;
+    margin-bottom: 2em;
+  }
+
+  &__feed {
+    line-height: 1.5;
+  }
+}

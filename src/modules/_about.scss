@@ -1,0 +1,49 @@
+/*-------------------------------------  About  ------------------------------------------*/
+
+.about {
+  padding-top: 132px;
+  padding-bottom: 170px;
+
+  &__header {
+    grid-column: 2 / 3;
+    line-height: 1.25;
+
+    &--bold {
+      font-weight: 500;
+    }
+
+    &--accent {
+      @include var(color, clr-primary);
+      font-weight: 300;
+    }
+  }
+
+  &__article {
+    grid-column: 3 / span 3;
+    padding-left: 80px;
+    padding-top: 8px;
+
+    &__top-text {
+      margin-bottom: 35px;
+      line-height: 1.5;
+
+      &--bold {
+        font-weight: 500;
+      }
+    }
+
+    &__list {
+      @extend .about__article__top-text;
+      max-width: 418px;
+
+      &__item {
+        line-height: inherit;
+      }
+    }
+
+    &__bottom-text {
+      @extend .about__article__top-text--bold;
+      line-height: 1.5;
+    }
+  }
+}

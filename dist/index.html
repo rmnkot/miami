@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <!-- <style>
+    /*----------------------------------- Reset.css ------------------------------------------*/
+html,
+body,
+body div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+figure,
+figcaption,
+footer,
+header,
+menu,
+nav,
+section,
+time,
+mark,
+audio,
+video,
+details,
+summary {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: normal;
+  line-height: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit; }
+
+html,
+body {
+  cursor: default; }
+
+code {
+  cursor: text; }
+
+a,
+label,
+button,
+input[type="file"],
+input[type="button"],
+input[type="radio"],
+input[type="submit"],
+input[type="checkbox"] {
+  cursor: pointer; }
+
+button[disabled],
+input[disabled] {
+  cursor: default; }
+
+object,
+embed {
+  max-width: 100%; }
+
+html {
+  overflow-y: scroll; }
+
+ul {
+  list-style: none; }
+
+blockquote,
+q {
+  quotes: none; }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none; }
+
+a {
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  background: transparent;
+  text-decoration: none;
+  color: inherit; }
+
+button,
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none; }
+
+textarea {
+  resize: none; }
+
+del {
+  text-decoration: line-through; }
+
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted #000;
+  cursor: help; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+th {
+  font-weight: bold;
+  vertical-align: bottom; }
+
+td {
+  font-weight: normal;
+  vertical-align: top; }
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0; }
+
+input,
+select {
+  vertical-align: middle; }
+
+pre {
+  white-space: pre;
+  /* CSS2 */
+  white-space: pre-wrap;
+  /* CSS 2.1 */
+  white-space: pre-line;
+  /* CSS 3 (and 2.1 as well, actually) */
+  word-wrap: break-word;
+  /* IE */ }
+
+input[type="radio"] {
+  vertical-align: text-bottom; }
+
+input[type="checkbox"] {
+  vertical-align: bottom; }
+
+select,
+input,
+textarea {
+  font: 99% sans-serif; }
+
+small {
+  font-size: 85%; }
+
+strong {
+  font-weight: bold; }
+
+td,
+td img {
+  vertical-align: top; }
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace, sans-serif; }
+
+button,
+input,
+select,
+textarea {
+  margin: 0; }
+
+button,
+input[type=button] {
+  width: auto;
+  overflow: visible; }
+
+:root {
+  --clr-primary:#00aaef;
+  --clr-primary-lt:#3ebcee;
+  --clr-ntrl-min:#fff;
+  --clr-ntrl-max:#000;
+  --clr-base-lt:#eeeeee;
+  --clr-base-dk:#393939; }
+
+/*================================ Basic elements ========================================*/
+/*--------------------------------- Local fonts ------------------------------------------*/
+/*----------------------------------- Tags -----------------------------------------------*/
+h1 {
+  font-size: 3rem;
+  font-weight: 300;
+  text-transform: uppercase; }
+
+h2 {
+  font-size: 2rem;
+  font-weight: 400; }
+
+/*==================================== Layout =============================================*/
+html {
+  font-size: 16px;
+  scroll-behavior: smooth; }
+  @media only screen and (max-width: 1023px) {
+    html {
+      font-size: 15px; } }
+  @media only screen and (min-width: 1248px) {
+    html {
+      font-size: 17px; } }
+  @media only screen and (min-width: 1700px) {
+    html {
+      font-size: 18px; } }
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  color: #000;
+  color: var(--clr-ntrl-max);
+  background-color: #fff;
+  background-color: var(--clr-ntrl-min);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2fr 1fr 1fr 2fr 1fr;
+      grid-template-columns: 1fr 2fr 1fr 1fr 2fr 1fr;
+  -ms-grid-rows: 100vh auto 42vw;
+      grid-template-rows: 100vh auto 42vw;
+  grid-column-gap: 1.25rem; }
+  @media only screen and (max-width: 1023px) {
+    body {
+      -ms-grid-columns: 0.5fr 2fr 1fr 1fr 2fr 0.5fr;
+          grid-template-columns: 0.5fr 2fr 1fr 1fr 2fr 0.5fr; } }
+  @media only screen and (min-width: 1700px) {
+    body {
+      -ms-grid-columns: 2fr 2fr 1fr 1fr 2fr 2fr;
+          grid-template-columns: 2fr 2fr 1fr 1fr 2fr 2fr; } }
+
+.header,
+.main,
+.footer,
+.about,
+.gallery,
+.consult,
+.feedback,
+.contact {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 6;
+  grid-column: 1 / span 6;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: inherit;
+      grid-template-columns: inherit;
+  grid-column-gap: inherit;
+  position: relative; }
+
+.header,
+.footer {
+  background-size: cover;
+  background-position: center top; 
+  }
+
+.header {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / 2;
+  -ms-grid-rows: 200px 140px;
+      grid-template-rows: 200px 140px;
+  background-image: url("img/bg-img/hero.jpg");
+  -ms-flex-line-pack: justify;
+      align-content: space-between; }
+
+.main {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2 / 3;
+  -ms-grid-rows: (auto)[5];
+      grid-template-rows: repeat(5, auto); }
+
+.about {
+  -ms-grid-row: 1;
+  grid-row: 1; }
+
+.galery {
+  -ms-grid-row: 2;
+  grid-row: 2; }
+
+.consult {
+  -ms-grid-row: 3;
+  grid-row: 3; }
+
+.feedback {
+  -ms-grid-row: 4;
+  grid-row: 4; }
+
+.contact {
+  -ms-grid-row: 5;
+  grid-row: 5; }
+
+.footer {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3 / 4;
+  background-image: url("img/bg-img/footer.jpg");
+  -ms-grid-rows: auto 85px;
+      grid-template-rows: auto 85px; }
+
+/*-------------------------------------  Head page  ------------------------------------------*/
+.head, .nav {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 4;
+  grid-column: 2 / span 4;
+  color: #fff;
+  color: var(--clr-ntrl-min);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-transform: uppercase;
+  font-weight: 500; }
+  .head__phone, .head__call {
+    opacity: 0.6;
+    position: relative;
+    -webkit-transition: opacity 0.25s;
+    transition: opacity 0.25s; }
+    .head__phone:hover, .head__call:hover {
+      opacity: 0.8; }
+  .head__call::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    border: 1px dashed currentColor; }
+
+.nav {
+  -ms-grid-row: 2;
+  grid-row: 2; }
+  .nav__link {
+    -webkit-transition: color 0.25s;
+    transition: color 0.25s; }
+    .nav__link:hover {
+      color: #00aaef;
+      color: var(--clr-primary);
+      text-shadow: 0 0 1px white; }
+  </style> -->
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,500i,700&amp;subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="head">
+      <a class="head__phone" href="tel:+8-800-500-50-50">8 800 500 50 50</a>
+      <img class="header__logo" src="img/icons/logo.png" alt="logo">
+      <a class="head__call" href="tel:+8-800-500-50-50">call to order</a>
+    </div>
+
+    <div class="nav">
+      <a href="" class="nav__link">home</a>
+      <a href="" class="nav__link">about us</a>
+      <a href="" class="nav__link">gallery</a>
+      <a href="" class="nav__link">consultation</a>
+      <a href="" class="nav__link">testimonials</a>
+      <a href="" class="nav__link">contacts</a>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="main">
+
+    <!-- About -->
+    <section class="about">
+      <h1 class="about__header">Miami
+        <span class="about__header--bold">best</span> Realry<span class="about__header--accent">—<br />this</span>
+      </h1>
+
+      <div class="about__article">
+        <p class="about__article__top-text"><span class="about__article__top-text--bold">Over 50 years experience in
+            love.</span><br />
+          Mazel and VA Tsukkerman in his "Analysis of musical works." Pointillism, which originated in the music of the
+          early twentieth century, microforms, found a distant historical.</p>
+
+        <ol class="about__article__list">
+          <li class="about__article__list__item">The market leader in real estate since 2003</li>
+          <li class="about__article__list__item">Awards Real Estate Company, 2010, 2011, 2013</li>
+          <li class="about__article__list__item">More than 200 satisfied customers premium segment</li>
+          <li class="about__article__list__item">We focus only on new buildings and high-level doskanalno know this
+            area better than
+            other specialists.</li>
+          <li class="about__article__list__item"> Working directly with developers - so have more useful information
+            about the
+            profitable deals</li>
+        </ol>
+
+        <p class="about__article__bottom-text">We will never late!<br /> Guaranteed secure transaction - 100%</p>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery">
+      <h1 class="section__head--dark">gallery</h1>
+
+      <figure class="gallery__object">
+        <img class="gallery__object__img--wide-left" src="img/gallery/img-wide1.jpg" alt="marina1">
+        <img class="gallery__object__img--narrow-right" src="img/gallery/img-narrow2.jpg" alt="marina2">
+        <figcaption class="gallery__object__text">Marina Palms / <span class="gallery__object__text--color">North Miami
+            Beach, FL 33162</span></figcaption>
+      </figure>
+
+      <figure class="gallery__object">
+        <img class="gallery__object__img--left" src="img/gallery/img3.jpg" alt="edition1">
+        <img class="gallery__object__img--right" src="img/gallery/img4.jpg" alt="edition2">
+        <figcaption class="gallery__object__text">Edition Residens / <span class="gallery__object__text--color">Miami
+            Beach, FL 33139</span></figcaption>
+      </figure>
+
+      <figure class="gallery__object">
+        <img class="gallery__object__img--narrow-left" src="img/gallery/img-narrow5.jpg" alt="faena1">
+        <img class="gallery__object__img--wide-right" src="img/gallery/img-wide6.jpg" alt="faena2">
+        <figcaption class="gallery__object__text">Faena House / <span class="gallery__object__text--color">Miami Beach,
+            FL 33140</span></figcaption>
+      </figure>
+
+      <button class="gallery__btn btn">View all</button>
+    </section>
+
+    <!-- Consult -->
+    <section class="consult">
+      <h1 class="section__head--light">consultation</h1>
+
+      <article class="consult__article">
+        <h2 class="consult__article__head">How long have<br /> you do yourself a gift?</h2>
+
+        <p class="consult__article__text">The procedural change mezzo forte starts izoritmichesky pickup at these
+          moments stop LA Mazel and VA Tsukkerman in his "Analysis of musical works." Pointillism, which originated in
+          the music of the early twentieth century, microforms, found a distant historical</p>
+      </article>
+
+      <form action="" class="consult__form form">
+        <input class="form__input" type="text" placeholder="name">
+        <input class="form__input" type="tel" placeholder="phone">
+        <input class="form__input" type="email" placeholder="email">
+        <input class="btn" type="submit" value="consultation">
+      </form>
+    </section>
+
+    <!-- Feedback -->
+    <section class="feedback">
+      <h1 class="section__head--dark">testimonials</h1>
+
+      <figure class="card card--left">
+        <img class="card__img" src="img/avatars/ava-stive.png" alt="stive">
+        <span class="card__name">Stev Joni</span>
+        <span class="card__company">Founder Lucoil</span>
+        <p class="card__feed">Nice work, Certificates National Association of Realtors (USA).</p>
+      </figure>
+
+      <figure class="card card--center">
+        <img class="card__img" src="img/avatars/ava-usman.png" alt="usman">
+        <span class="card__name">Alisher Usmanov</span>
+        <span class="card__company">Ural Steel</span>
+        <p class="card__feed">My soul is illuminated by an unearthly joy, as these beautiful spring morning, which I
+          enjoy with all my heart.
+          I'm all alone and blissfully happy in the local edge. </p>
+      </figure>
+
+      <figure class="card card--right">
+        <img class="card__img" src="img/avatars/ava-alex.png" alt="alex">
+        <span class="card__name">Алексей Мордашов</span>
+        <span class="card__company">ГазПром</span>
+        <p class="card__feed">When my lovely valley of steam rises and half-day sun is above an impermeable. thicket</p>
+      </figure>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact">
+      <h1 class="section__head--light">contact</h1>
+
+      <div class="contact__article">
+        <a class="contact__article__mail" href="">Hello@miami.com</a>
+        <a class="contact__article__phone" href="">8 800 678 78 78</a>
+        <a class="contact__article__phone" href="">8 800 700 98 98</a>
+        <p class="contact__article__addres">400 first ave. n.<br />
+          suite 700<br />
+          Minneapolis, MN 55401</p>
+      </div>
+
+      <form action="" class="contact__form form">
+        <input class="form__input" type="text" placeholder="name">
+        <input class="form__input" type="email" placeholder="email">
+        <textarea class="form__textarea" name="" cols="30" rows="10" placeholder="message"></textarea>
+        <input class="btn" type="submit" value="consultation">
+      </form>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <img class="footer__logo" src="img/icons/logo.png" alt="logo">
+
+    <span class="copyright">© 2013 Miami.</span>
+  </footer>
+
+  <!-- Code bolow doesn't support in IE -->
+  <!-- <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'"> -->
+  <!-- <noscript>
+    <link rel="stylesheet" href="css/style.css">
+  </noscript> -->
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Custom scripts -->
+  <script src="js/app.js"></script>
+  <!-- <script src="js/jquery.js"></script> -->
+</body>
+
+</html>

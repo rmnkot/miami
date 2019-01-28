@@ -1,0 +1,18 @@
+/*-------------------------------------  Button  ------------------------------------------*/
+
+.btn {
+  @include var(background-color, clr-primary);
+  @include var(color, clr-ntrl-min);
+  padding: 1.3em 0;
+  font-size: $fs-milli;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1;
+  text-transform: uppercase;
+  border: none;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    @include var(background-color, clr-primary-lt);
+  }
+}

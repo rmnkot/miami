@@ -1,0 +1,36 @@
+/*---------------------------------- Section head ----------------------------------------------*/
+.section__head--dark {
+  grid-column: 2 / span 4;
+  @include center('horizontal');
+  top: -24px;
+
+  &::before {
+    @include pseudo;
+    background-image: url(../img/icons/crown-reverced.png);
+    @include var(background-color, clr-base-lt);
+    background-repeat: no-repeat;
+    height: 20px;
+    background-position: center;
+    width: 35px;
+    top: 1.1em;
+    z-index: 1;
+    @include center(horizontal);
+  }
+
+
+  &::after {
+    @include pseudo;
+    top: 1.2em;
+    width: 100%;
+    height: 2px;
+    @include var(background-color, clr-primary);
+  }
+}
+
+.section__head--light {
+  @extend .section__head--dark;
+
+  &::before {
+    @include var(background-color, clr-ntrl-min);
+  }
+}
