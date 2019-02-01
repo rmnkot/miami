@@ -10,3 +10,11 @@ h2 {
   font-size: $fs-h2;
   font-weight: 400;
 }
+
+#gallery-point,
+#consult-point,
+#feedback-point,
+#contact-point {
+  position: absolute;
+  top: -80px;
+}
